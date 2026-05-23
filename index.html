@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Silver Lake Interactive Guide</title>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background:
+    linear-gradient(rgba(245, 240, 230, 0.35), rgba(245, 240, 230, 0.35)),
+    url('wood background.webp');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  color: #1f3742;
+  text-shadow: 0 1px 1px rgba(255,255,255,0.25);
+}
+
+h1 {
+  text-shadow: 0 3px 8px rgba(0,0,0,0.25);
+
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  text-shadow: 0 2px 6px rgba(0,0,0,0.18);
+
+  text-align: center;
+  margin-bottom: 24px;
+  color: #5c7c6f;
+}
+
+.banner {
+  background: linear-gradient(180deg, rgba(255,255,255,0.92) 0%, rgba(244,235,220,0.92) 100%);
+  padding: 14px;
+  border-radius: 14px;
+  text-align: center;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.24); backdrop-filter: blur(2px);
+}
+
+.controls {
+  background: rgba(248,240,228,0.78);
+  padding: 18px;
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.24);
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+input, select {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #cbbfa8;
+  font-size: 1rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 18px;
+}
+
+.card {
+  background: linear-gradient(180deg, rgba(255,252,248,0.90) 0%, rgba(242,232,218,0.90) 100%);
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.28); backdrop-filter: blur(2px);
+}
+
+.category {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: #d8c3a5;
+  margin-bottom: 10px;
+  font-size: 0.85rem;
+  text-transform: capitalize;
+}
+
+.title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.meta {
+  margin-bottom: 8px;
+}
+
+.distance {
+  color: #7a9e7e;
+  font-weight: bold;
+}
+
+.desc {
+  line-height: 1.45;
+  margin-bottom: 10px;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.btn {
+  text-decoration: none;
+  background: #264653;
+  color: white;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.22);
+  font-weight: bold;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+}
+
+.btn.secondary {
+  background: #5c7c6f;
+}
+
+details {
+  margin-bottom: 10px;
+  background: #f7f2ea;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.local-tag {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: #7a9e7e;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+</style>
+</head>
+<body>
+
+
+<h1 style="display:flex; flex-direction:column; align-items:center; gap:12px;">
+  <img src="treehouse logo.png" alt="Silver Lake Tree House Logo" style="width:180px; max-width:90%; border-radius:50%; box-shadow:0 4px 12px rgba(0,0,0,0.15);">
+  <span></span>
+</h1>
+
+<p class="subtitle"></p>
+
+
+<div class="banner">
+  <div style="font-size:1.1rem; font-weight:bold; margin-bottom:10px;">
+    🎉 Looking for local festivals and events?
+  </div>
+  <a 
+    class="btn" 
+    href="https://thinkdunes.com/events/" 
+    target="_blank"
+    style="display:inline-block;"
+  >
+    Click Here for More Information on Local Festivals and Events
+  </a>
+</div>
+
+
+
+<div style="
+  background:white;
+  padding:18px;
+  border-radius:16px;
+  margin-bottom:20px;
+  text-align:center;
+  box-shadow:0 2px 8px rgba(0,0,0,0.08);
+">
+  <h2 style="margin:0; color:#264653;">Explore the Silver Lake Interactive Guide</h2>
+  <p style="margin:8px 0 0; color:#5c7c6f;">
+    Browse local restaurants, attractions, beaches, rentals, shopping, and more.
+  </p>
+</div>
+
+<div class="controls">
+
+  <input type="text" id="searchInput" placeholder="Search locations...">
+
+  <select id="categoryFilter">
+    <option value="all">All Categories</option>
+    <option value="fuel">Fuel</option>
+    <option value="shopping">Shopping</option>
+    <option value="food">Food</option>
+    <option value="entertainment">Entertainment</option>
+    <option value="nature">Nature</option>
+  </select>
+
+  <select id="ratingFilter">
+    <option value="0">All Ratings</option>
+    <option value="4">4★ & up</option>
+    <option value="4.5">4.5★ & up</option>
+    <option value="4.8">4.8★ & up</option>
+  </select>
+
+  <select id="sortSelect">
+    <option value="distance">Sort by Distance</option>
+    <option value="rating">Sort by Rating</option>
+    <option value="price">Sort by Price</option>
+    <option value="name">Sort by Name</option>
+  </select>
+</div>
+
+<div class="cards" id="cardsContainer"></div>
+
+<script>
+const treehouseLat = 43.6825;
+const treehouseLon = -86.5050;
+
+const places = [
+{
+name: "Silver Lake State Park",
+category: "nature",
+rating: 4.8,
+priceCategory: "moderate",
+priceDetails: "Michigan Recreation Passport required. Around $17 annually for residents and $34–41 for nonresidents. Camping and ORV use can increase spending.",
+description: "Beach, dunes, hiking, kayaking, camping, and ORV access.",
+address: "9679 W State Park Rd, Mears, MI 49436",
+hours: "Daily 8am–8pm",
+accessibility: "Accessible boardwalks, parking, and beach access",
+notes: "One of Michigan's most popular dune destinations.",
+website: "http://www.michigan.gov/silverlake",
+phone: "2318733083",
+lat: 43.6821,
+lon: -86.5025
+},
+{
+name: "Little Sable Point Lighthouse",
+category: "nature",
+rating: 4.8,
+priceCategory: "inexpensive",
+priceDetails: "Free beach access. Lighthouse climb usually costs around $5–8.",
+description: "Historic lighthouse on Lake Michigan shoreline.",
+address: "287 N Lighthouse Dr, Mears, MI 49436",
+hours: "Tues–Sun 10am–5pm",
+accessibility: "Paved access path from parking lot",
+notes: "Beautiful sunset and beach photography spot.",
+website: "https://splka.org/what-we-do/our-lights/little-sable.html",
+phone: "2318457417",
+lat: 43.6456,
+lon: -86.5375
+},
+{
+name: "Mac Wood's Dune Rides",
+category: "entertainment",
+rating: 4.9,
+priceCategory: "moderate",
+priceDetails: "Most guests spend around $25–40 per person.",
+description: "Classic guided dune ride experience.",
+address: "629 N 18th Ave, Mears, MI",
+hours: "Daily 9:30am–4pm",
+notes: "No reservations required.",
+website: "http://www.macwoodsdunerides.com/",
+phone: "2318732817",
+lat: 43.6878,
+lon: -86.5032
+},
+{
+name: "Silver Lake Adventure Rentals",
+category: "entertainment",
+rating: 5.0,
+priceCategory: "higher priced",
+priceDetails: "Expect $100–400+ depending on rental type and duration.",
+description: "Polaris RZR rentals and e-bikes.",
+address: "Silver Lake, MI",
+hours: "Open daily",
+notes: "Street-legal rental vehicles.",
+website: "https://silverlakeadventurerentals.com/",
+phone: "2313602513",
+lat: 43.6808,
+lon: -86.4987
+},
+{
+name: "Craig's Cruisers Silver Lake",
+category: "entertainment",
+rating: 4.5,
+priceCategory: "moderate",
+priceDetails: "Families typically spend $20–60 depending on attractions.",
+description: "Go-karts, mini golf, arcade, and zip line.",
+address: "8145 W Hazel Rd, Mears, MI 49436",
+website: "https://www.silverlakecraigscruisers.com/",
+phone: "2317428902",
+lat: 43.6819,
+lon: -86.4938
+},
+{
+name: "Open Hearth Grille & Bar",
+category: "food",
+rating: 4.4,
+priceCategory: "moderate",
+priceDetails: "Most meals cost around $15–35 per person.",
+description: "Popular sit-down restaurant and cocktails.",
+address: "8570 W Hazel Rd, Mears, MI 49436",
+website: "http://openhearthgrille.com/",
+phone: "2318738800",
+lat: 43.6776,
+lon: -86.5001
+},
+{
+name: "Golden Sands Golf & Bucket Bar",
+category: "food",
+rating: 4.6,
+priceCategory: "moderate",
+priceDetails: "Food is usually $12–30 per person plus golf if desired.",
+description: "Pizza, golf, drinks, and lawn games.",
+address: "2501 N Wilson Rd, Mears, MI 49436",
+website: "http://www.goldensandsgolfcourse.com/",
+phone: "2318734909",
+lat: 43.6854,
+lon: -86.4702
+},
+{
+name: "Farmhouse Kitchen & Market",
+category: "food",
+rating: 4.3,
+priceCategory: "higher priced",
+priceDetails: "Dinner often ranges $25–60 per person.",
+description: "Farm-to-table dining near Shelby.",
+address: "1130 W Stony Lake Rd, Shelby, MI 49455",
+website: "https://www.farmhousestonylake.com/",
+phone: "2312590029",
+lat: 43.6034,
+lon: -86.3817
+},
+{
+name: "Silver Lake Pizza Factory",
+category: "food",
+rating: 4.4,
+priceCategory: "inexpensive",
+priceDetails: "Most visitors spend around $10–25.",
+description: "Popular local pizza spot.",
+address: "7960 W Hazel Rd, Mears, MI 49436",
+phone: "2318731850",
+lat: 43.6847,
+lon: -86.5052
+},
+{
+name: "Hart Pizza",
+category: "food",
+rating: 4.6,
+priceCategory: "inexpensive",
+priceDetails: "Usually $10–25 per person.",
+description: "Highly rated deep dish pizza.",
+address: "65 S State St, Hart, MI 49420",
+website: "https://www.hartpizza.com/",
+phone: "2318734434",
+lat: 43.6985,
+lon: -86.3631
+},
+{
+name: "Silver Scoops",
+category: "food",
+rating: 4.6,
+priceCategory: "inexpensive",
+priceDetails: "Ice cream and snacks generally $5–15.",
+description: "Ice cream and smoked BBQ.",
+address: "7960 W Hazel Rd, Mears, MI 49436",
+phone: "2317428178",
+lat: 43.6857,
+lon: -86.5031
+},
+{
+name: "Silver Pointe General Store",
+category: "fuel",
+rating: 4.2,
+priceCategory: "inexpensive",
+priceDetails: "Typical convenience store pricing for fuel, snacks, and groceries.",
+description: "Gas, groceries, liquor, and essentials.",
+address: "8586 W Hazel Rd, Mears, MI 49436",
+phone: "2318730873",
+lat: 43.6824,
+lon: -86.4954
+},
+{
+name: "Parkside Store – Silver Lake",
+category: "fuel",
+rating: 4.2,
+priceCategory: "inexpensive",
+priceDetails: "Typical convenience and grocery pricing.",
+description: "Groceries, firewood, and supplies.",
+address: "8350 W Silver Lake Rd, Mears, MI 49436",
+phone: "2318735457",
+lat: 43.6807,
+lon: -86.4994
+},
+{
+name: "Rennhack Orchards Market",
+category: "shopping",
+rating: 4.6,
+priceCategory: "moderate",
+priceDetails: "Most visitors spend $10–50 on produce and gifts.",
+description: "Fresh produce, baked goods, and gifts.",
+address: "8348 W Garfield Rd, Mears, MI 49436",
+website: "http://www.rennhackorchardsmarket.com/",
+phone: "2318737523",
+lat: 43.7002,
+lon: -86.4899
+},
+{
+name: "Ivy Cottage",
+category: "shopping",
+rating: 4.9,
+priceCategory: "moderate",
+priceDetails: "Gift and decor purchases usually range $15–80.",
+description: "Home decor and gift shop.",
+address: "49 S State St, Hart, MI 49420",
+website: "https://www.ivycottagemi.com/",
+phone: "6169202000",
+lat: 43.6980,
+lon: -86.3638
+},
+{
+name: "Lewis Adventure Farm & Zoo",
+category: "entertainment",
+rating: 4.8,
+priceCategory: "higher priced",
+priceDetails: "Admission is usually $25–30 per person. Animal encounters cost extra.",
+description: "Family attraction with animals, rides, and splash pad.",
+address: "4180 M-20, New Era, MI 49446",
+website: "https://lewisadventurefarm.com/",
+phone: "2318615730",
+lat: 43.5521,
+lon: -86.2334
+},
+{
+name: "Michigan's Adventure",
+category: "entertainment",
+rating: 4.2,
+priceCategory: "higher priced",
+priceDetails: "Tickets generally range $45–65 plus parking and food.",
+description: "Michigan's largest amusement and water park.",
+address: "4750 Whitehall Rd, Muskegon, MI 49445",
+website: "https://www.miadventure.com/",
+phone: "2317669959",
+lat: 43.3065,
+lon: -86.3372
+},
+{
+name: "USS Silversides Submarine Museum",
+category: "entertainment",
+rating: 4.8,
+priceCategory: "moderate",
+priceDetails: "Tickets usually around $15–20 per adult.",
+description: "Tour a real WWII submarine.",
+address: "1346 Bluff St, Muskegon, MI 49441",
+website: "https://silversidesmuseum.org/",
+phone: "2317551230",
+lat: 43.2207,
+lon: -86.3389
+},
+{
+name: "Ludington State Park Beach",
+category: "nature",
+rating: 4.8,
+priceCategory: "moderate",
+priceDetails: "Requires Michigan Recreation Passport for vehicles.",
+description: "Large beach, dunes, and hiking trails.",
+address: "8800 W M-116, Ludington, MI 49431",
+website: "https://www.visitludington.com/ludington-state-park",
+phone: "2318432423",
+lat: 43.9544,
+lon: -86.4537
+}
+  ,
+{
+name: "Oceana Bike and Boat",
+category: "entertainment",
+rating: 5.0,
+priceCategory: "moderate",
+priceDetails: "Bike and kayak rentals typically range $20–60 depending on duration.",
+description: "Kayak and bike rentals with delivery service.",
+address: "Hart, MI",
+hours: "Thurs–Sat",
+notes: "Great for exploring the Hart-Montague trail.",
+website: "https://www.oceanabikeandboat.com/",
+phone: "2313018039",
+lat: 43.698,
+lon: -86.363
+},
+{
+name: "Val-Du-Lakes Bar & Grill",
+category: "food",
+rating: 4.1,
+priceCategory: "moderate",
+priceDetails: "Meals and drinks generally total $15–35 per person.",
+description: "Live music weekends with wraps and appetizers.",
+address: "1511 N 24th Ave, Mears, MI 49436",
+hours: "Thurs–Sat",
+website: "http://www.valdulakes.com/",
+phone: "2318734901",
+lat: 43.705,
+lon: -86.486
+},
+{
+name: "Lighthouse Bar & Grill",
+category: "food",
+rating: 4.1,
+priceCategory: "moderate",
+priceDetails: "Typical meals and drinks range $12–30.",
+description: "Closest bar and grill to the lake with ice cream and camp store.",
+address: "8236 W Hazel Rd, Mears, MI 49436",
+hours: "Mon, Thurs–Sat",
+website: "http://hideawaycampground.com/",
+phone: "2318734428",
+lat: 43.684,
+lon: -86.507
+},
+{
+name: "B.C. Pizza",
+category: "food",
+rating: 4.0,
+priceCategory: "inexpensive",
+priceDetails: "Most meals cost around $8–20.",
+description: "Convenient chain-style pizza with lunch buffet.",
+address: "3786 W Polk Rd, Hart, MI 49420",
+hours: "Open daily",
+phone: "2318735555",
+website: "https://bcpizza.com/",
+lat: 43.698,
+lon: -86.37
+},
+{
+name: "Tasty Creationz",
+category: "food",
+rating: 4.3,
+priceCategory: "inexpensive",
+priceDetails: "Snacks, fries, and desserts usually cost $5–15.",
+description: "Ice cream, funnel fries, nachos, and live music.",
+address: "7960 W Hazel Rd, Mears, MI 49436",
+hours: "Daily 11am–10pm",
+website: "https://www.facebook.com/profile.php?id=61558311030336",
+lat: 43.6835,
+lon: -86.4985
+},
+{
+name: "Whippy Dip",
+category: "food",
+rating: 4.4,
+priceCategory: "inexpensive",
+priceDetails: "Soft serve and treats generally under $10.",
+description: "Classic soft serve stand near the dunes.",
+address: "8220 W Hazel Rd, Mears, MI 49436",
+hours: "Fri–Sun",
+website: "http://www.whippy-dip.com/",
+phone: "2318734715",
+lat: 43.684,
+lon: -86.506
+},
+{
+name: "Silver Lake Shores Gas and Go",
+category: "fuel",
+rating: 4.0,
+priceCategory: "inexpensive",
+priceDetails: "Typical gas station and convenience store pricing.",
+description: "Gas station in the center of Silver Lake village.",
+address: "7960 W Hazel Rd, Mears, MI 49436",
+website: "https://maps.google.com/?cid=10749536315623973566",
+lat: 43.6811,
+lon: -86.4978
+},
+{
+name: "Dollar General – W Polk Rd, Hart",
+category: "shopping",
+rating: 4.1,
+priceCategory: "inexpensive",
+priceDetails: "Budget-friendly household items and snacks.",
+description: "Discount household and grocery store.",
+address: "3757 W Polk Rd, Hart, MI 49420",
+hours: "Daily 8am–10pm",
+website: "https://www.dollargeneral.com/store-directory/mi/hart/21291",
+phone: "2317428570",
+lat: 43.698,
+lon: -86.37
+},
+{
+name: "Dune Duds Weekend Wear",
+category: "shopping",
+rating: 4.4,
+priceCategory: "moderate",
+priceDetails: "Souvenirs and apparel typically range $10–50.",
+description: "Lake-themed clothing and souvenirs.",
+address: "Silver Lake, MI",
+hours: "Fri–Sun",
+website: "http://www.duneduds.com/",
+phone: "2318737083",
+lat: 43.6828,
+lon: -86.4981
+},
+{
+name: "On The Farm",
+category: "shopping",
+rating: 4.9,
+priceCategory: "moderate",
+priceDetails: "Most visitors spend $15–75 on gifts and decor.",
+description: "Artisan gift shop in a barn near Mears.",
+address: "Mears, MI",
+hours: "Seasonal",
+phone: "2319230378",
+lat: 43.69,
+lon: -86.49
+},
+{
+name: "White River Light Station",
+category: "nature",
+rating: 4.7,
+priceCategory: "inexpensive",
+priceDetails: "Grounds are free; small tower climb fee may apply.",
+description: "Historic lighthouse where White Lake meets Lake Michigan.",
+address: "6199 Murray Rd, Whitehall, MI 49461",
+accessibility: "Accessible grounds; tower stairs required for climbing",
+notes: "Includes beach access, pier walk, and gift shop.",
+lat: 43.392,
+lon: -86.429
+},
+{
+name: "Pere Marquette Park",
+category: "nature",
+rating: 4.7,
+priceCategory: "free",
+priceDetails: "Beach access is free; seasonal parking fees may apply.",
+description: "Large public Lake Michigan beach in Muskegon.",
+address: "3510 Channel Dr, Muskegon, MI 49441",
+accessibility: "Paved paths, restrooms, playground",
+notes: "Features volleyball courts and live music nearby.",
+website: "https://muskegon-mi.gov/",
+phone: "2317244100",
+lat: 43.216,
+lon: -86.338
+},
+{
+name: "Muskegon State Park",
+category: "nature",
+rating: 4.8,
+priceCategory: "moderate",
+priceDetails: "Michigan Recreation Passport required for vehicles.",
+description: "Dunes, beaches, and trails near Muskegon.",
+address: "N Scenic Dr, Muskegon, MI 49445",
+accessibility: "Paved trails and accessible beach stairs",
+website: "https://www.michigan.gov/dnr",
+phone: "2317443480",
+lat: 43.258,
+lon: -86.364
+},
+{
+name: "Big Sable Point Lighthouse",
+category: "nature",
+rating: 4.8,
+priceCategory: "inexpensive",
+priceDetails: "Lighthouse climb around $5–8 plus state park entry.",
+description: "Iconic black-and-white lighthouse in Ludington State Park.",
+address: "8800 W M-116, Ludington, MI 49431",
+accessibility: "Wide flat trail to lighthouse",
+notes: "One of Michigan's most photographed lighthouses.",
+lat: 43.995,
+lon: -86.452
+},
+{
+name: "S.S. Badger Lake Michigan Carferry",
+category: "entertainment",
+rating: 4.7,
+priceCategory: "higher priced",
+priceDetails: "Passenger tickets begin around $112 round-trip; vehicles cost extra.",
+description: "Historic steamship ferry crossing Lake Michigan.",
+address: "701 Maritime Dr, Ludington, MI 49431",
+accessibility: "Wheelchair-accessible areas onboard",
+notes: "4-hour crossing to Wisconsin with food and entertainment.",
+website: "https://www.ssbadger.com/",
+phone: "18008414243",
+lat: 43.955,
+lon: -86.452
+},
+{
+name: "Stearns Park Beach",
+category: "nature",
+rating: 4.8,
+priceCategory: "free",
+priceDetails: "$10/day parking or free if walking from downtown.",
+description: "Popular Ludington beach and sunset spot.",
+address: "420 N Lakeshore Dr, Ludington, MI 49431",
+accessibility: "Paved paths and flat pier walk",
+website: "https://www.visitludington.com/",
+phone: "2318456237",
+lat: 43.956,
+lon: -86.457
+},
+{
+name: "Historic White Pine Village",
+category: "entertainment",
+rating: 4.6,
+priceCategory: "moderate",
+priceDetails: "Adults around $23, seniors $19, kids $15.",
+description: "Historic pioneer village with restored buildings.",
+address: "1687 S Lakeshore Dr, Ludington, MI 49431",
+notes: "Plan about 2–2.5 hours for a full visit.",
+website: "https://historicwhitepinevillage.org/",
+phone: "2318434808",
+lat: 43.934,
+lon: -86.447
+},
+{
+name: "House of Flavors Restaurant",
+category: "food",
+rating: 4.7,
+priceCategory: "inexpensive",
+priceDetails: "Ice cream starts around $5.50; meals generally under $20.",
+description: "Classic diner and homemade ice cream institution.",
+address: "402 W Ludington Ave, Ludington, MI 49431",
+accessibility: "Ground-level diner and separate ice cream entrance",
+notes: "Ludington staple since the 1950s.",
+website: "https://houseofflavorsrestaurants.com/",
+phone: "2318455785",
+lat: 43.955,
+lon: -86.455
+}
+,
+{
+name: "Golden Bakery",
+category: "food",
+rating: 4.3,
+priceCategory: "inexpensive",
+priceDetails: "Breakfast, pizza, and baked goods usually range $8–20 per person.",
+description: "Bakery, donuts, coffee, breakfast sandwiches, pizza, and baked goods.",
+address: "8438 Silver Lake Rd, Mears, MI 49436",
+hours: "Daily 8am–9pm",
+lat: 43.6842,
+lon: -86.5008
+},
+{
+name: "The Golden Eatery",
+category: "food",
+rating: 3.9,
+priceCategory: "inexpensive",
+priceDetails: "Breakfast and diner meals generally range $10–20.",
+description: "Classic local diner serving breakfast skillets, burgers, and comfort food.",
+address: "8446 W Silver Lake Rd, Mears, MI 49436",
+hours: "Seasonal hours",
+phone: "2318730444",
+lat: 43.6841,
+lon: -86.5003
+},
+{
+name: "Wilson's General Store",
+category: "shopping",
+rating: 4.5,
+priceCategory: "moderate",
+priceDetails: "Groceries, sandwiches, drinks, souvenirs, and camping essentials.",
+description: "Year-round general store with groceries, pizza, beer, ice cream, and vacation supplies.",
+address: "2430 N 56th Ave, Mears, MI 49436",
+hours: "Daily",
+website: "https://thinkdunes.com/business/wilsons-general-store/",
+phone: "2318732497",
+lat: 43.7015,
+lon: -86.4528
+},
+{
+name: "Golden Township Park at Silver Lake Sand Dunes",
+category: "nature",
+rating: 4.7,
+priceCategory: "free",
+priceDetails: "Free public access park area with picnic facilities.",
+description: "Scenic public park area with dune access, picnic space, and lake views.",
+address: "5527 W Fox Rd, Mears, MI 49436",
+hours: "Daily dawn to dusk",
+website: "https://goldentownshipmi.gov/silver-lake-dunes/",
+phone: "2318734413",
+lat: 43.6762,
+lon: -86.5118
+},
+{
+name: "Upper Silver Lake Access",
+category: "nature",
+rating: 4.6,
+priceCategory: "free",
+priceDetails: "Free public lake viewing and launch access.",
+description: "Quiet public access point great for kayaking, fishing, and sunset viewing.",
+address: "Silver Lake Rd, Mears, MI 49436",
+hours: "Open daily",
+lat: 43.6915,
+lon: -86.4972
+},
+{
+name: "Parrot's Landing Jeep Rentals",
+category: "entertainment",
+rating: 4.7,
+priceCategory: "higher priced",
+priceDetails: "Jeep and dune rentals typically range $150–500 depending on rental length.",
+description: "Popular Jeep and dune vehicle rental location for Silver Lake adventures.",
+address: "8343 W Hazel Rd, Mears, MI 49436",
+hours: "Daily",
+lat: 43.6834,
+lon: -86.5015
+},
+{
+name: "Silverback Offroad",
+category: "shopping",
+rating: 4.8,
+priceCategory: "higher priced",
+priceDetails: "ATV and off-road accessories and apparel pricing varies widely.",
+description: "Off-road vehicle gear, accessories, and apparel near the dunes.",
+address: "8290 W Hazel Rd, Mears, MI 49436",
+hours: "Daily",
+website: "https://silverbackoffroad.com/",
+phone: "2318733444",
+lat: 43.6826,
+lon: -86.4974
+}
+
+,
+{
+name: "Silver Lake Chicken Shack",
+category: "food",
+rating: 4.5,
+priceCategory: "inexpensive",
+priceDetails: "Chicken baskets, sandwiches, and sides generally range $10–20.",
+description: "Casual fried chicken stop popular with dune visitors.",
+address: "7960 W Hazel Rd, Mears, MI 49436",
+hours: "Seasonal",
+lat: 43.6838,
+lon: -86.5002
+},
+{
+name: "Silver Lake Buggy Rentals",
+category: "entertainment",
+rating: 4.7,
+priceCategory: "higher priced",
+priceDetails: "Buggy and dune vehicle rentals typically range $150–500.",
+description: "ATV and dune buggy rentals for exploring Silver Lake dunes.",
+address: "Silver Lake, MI 49436",
+hours: "Daily",
+lat: 43.6831,
+lon: -86.4997
+},
+{
+name: "Silver Town Mini Golf & Gem Mining",
+category: "entertainment",
+rating: 4.6,
+priceCategory: "moderate",
+priceDetails: "Mini golf and gem mining activities usually range $8–25.",
+description: "Family-friendly mini golf course with gem mining attraction.",
+address: "W Hazel Rd, Mears, MI 49436",
+hours: "Daily",
+lat: 43.6840,
+lon: -86.5010
+},
+{
+name: "Wave Club Water Sports",
+category: "entertainment",
+rating: 4.8,
+priceCategory: "higher priced",
+priceDetails: "Jet ski and water sports rentals usually range $75–300.",
+description: "Jet ski, pontoon, and water sports rentals on Silver Lake.",
+address: "Silver Lake, MI 49436",
+hours: "Daily",
+lat: 43.6816,
+lon: -86.4975
+},
+{
+name: "Silver Lake Beach",
+category: "nature",
+rating: 4.8,
+priceCategory: "free",
+priceDetails: "Public beach access is free.",
+description: "Popular swimming and sunbathing beach along Silver Lake.",
+address: "Silver Lake, Mears, MI 49436",
+hours: "Daily dawn to dusk",
+lat: 43.6802,
+lon: -86.5030
+},
+{
+name: "Silver Lake Tees",
+category: "shopping",
+rating: 4.5,
+priceCategory: "moderate",
+priceDetails: "T-shirts, souvenirs, and apparel generally range $10–50.",
+description: "Souvenir and apparel shop featuring Silver Lake themed merchandise.",
+address: "Silver Lake, MI 49436",
+hours: "Seasonal",
+lat: 43.6829,
+lon: -86.4988
+},
+{
+name: "The Sand Box",
+category: "shopping",
+rating: 4.4,
+priceCategory: "moderate",
+priceDetails: "Beachwear, gifts, and souvenirs generally range $10–60.",
+description: "Gift and beachwear shop near the dunes.",
+address: "Silver Lake, MI 49436",
+hours: "Daily",
+lat: 43.6835,
+lon: -86.4993
+},
+{
+name: "Silver Lake State Park Playground",
+category: "nature",
+rating: 4.6,
+priceCategory: "free",
+priceDetails: "Included with park access.",
+description: "Family playground area located within Silver Lake State Park.",
+address: "9679 W State Park Rd, Mears, MI 49436",
+hours: "Daily",
+website: "http://www.michigan.gov/silverlake",
+phone: "2318733083",
+lat: 43.6820,
+lon: -86.5031
+},
+{
+name: "Silver Lake State Park Boat Launch",
+category: "nature",
+rating: 4.7,
+priceCategory: "moderate",
+priceDetails: "Boat launch access included with Recreation Passport.",
+description: "Public boat launch providing access to Silver Lake.",
+address: "9679 W State Park Rd, Mears, MI 49436",
+hours: "Daily",
+website: "http://www.michigan.gov/silverlake",
+phone: "2318733083",
+lat: 43.6815,
+lon: -86.5012
+},
+{
+name: "Golden Township Park at Lake Michigan",
+category: "nature",
+rating: 4.8,
+priceCategory: "free",
+priceDetails: "Free public beach and park access.",
+description: "Lake Michigan access park with beach, picnic area, and sunsets.",
+address: "8719 W Fox Rd, Mears, MI 49436",
+hours: "Daily dawn to dusk",
+website: "https://goldentownshipmi.gov/",
+phone: "2318734413",
+lat: 43.6738,
+lon: -86.5362
+},
+{
+name: "Silver Lake State Park Ruckel's Bridge Day Use Area",
+category: "nature",
+rating: 4.7,
+priceCategory: "moderate",
+priceDetails: "Included with Recreation Passport access.",
+description: "Scenic bridge and day-use area connecting trails and dune access.",
+address: "Silver Lake State Park, Mears, MI 49436",
+hours: "Daily",
+website: "http://www.michigan.gov/silverlake",
+phone: "2318733083",
+lat: 43.6792,
+lon: -86.5071
+}
+
+];
+
+function toRadians(deg) {
+  return deg * (Math.PI / 180);
+}
+
+function calculateDistance(lat1, lon1, lat2, lon2) {
+  const R = 6371;
+  const dLat = toRadians(lat2 - lat1);
+  const dLon = toRadians(lon2 - lon1);
+
+  const a =
+    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    Math.cos(toRadians(lat1)) * Math.cos(toRadians(lat2)) *
+    Math.sin(dLon / 2) * Math.sin(dLon / 2);
+
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  const km = R * c;
+  return km * 0.621371;
+}
+
+const cardsContainer = document.getElementById('cardsContainer');
+const searchInput = document.getElementById('searchInput');
+const categoryFilter = document.getElementById('categoryFilter');
+const ratingFilter = document.getElementById('ratingFilter');
+const sortSelect = document.getElementById('sortSelect');
+
+function renderCards() {
+  const search = searchInput.value.toLowerCase();
+  const category = categoryFilter.value;
+  const rating = parseFloat(ratingFilter.value);
+  const sort = sortSelect.value;
+
+  let filtered = places.filter(place => {
+    const matchesSearch =
+      place.name.toLowerCase().includes(search) ||
+      place.description.toLowerCase().includes(search);
+
+    const matchesCategory =
+      category === 'all' || place.category === category;
+
+    const matchesRating = place.rating >= rating;
+
+    return matchesSearch && matchesCategory && matchesRating;
+  });
+
+  filtered = filtered.map(place => {
+    const distance = calculateDistance(
+      treehouseLat,
+      treehouseLon,
+      place.lat,
+      place.lon
+    );
+
+    return { 
+      ...place, 
+      distance,
+      isLocal: distance <= 10
+    };
+  });
+
+  const priceOrder = {
+    'free': 0,
+    'inexpensive': 1,
+    'moderate': 2,
+    'higher priced': 3
+  };
+
+  if (sort === 'distance') {
+    filtered.sort((a,b) => a.distance - b.distance);
+  }
+
+  if (sort === 'rating') {
+    filtered.sort((a,b) => b.rating - a.rating);
+  }
+
+  if (sort === 'price') {
+    filtered.sort((a,b) => priceOrder[a.priceCategory] - priceOrder[b.priceCategory]);
+  }
+
+  if (sort === 'name') {
+    filtered.sort((a,b) => a.name.localeCompare(b.name));
+  }
+
+  cardsContainer.innerHTML = '';
+
+  filtered.forEach(place => {
+    const card = document.createElement('div');
+    card.className = 'card';
+
+    card.innerHTML = `
+      <div class="category">${place.category}</div>
+      <div class="title">
+        ${place.name}
+        ${place.isLocal ? '<span class="local-tag">LOCAL</span>' : ''}
+      </div>
+
+      <div class="meta">⭐ ${place.rating}</div>
+      <div class="meta distance">📍 ${place.distance.toFixed(1)} miles from Treehouse</div>
+
+      <details>
+        <summary>💲 ${place.priceCategory}</summary>
+        <div style="margin-top:8px; line-height:1.4;">${place.priceDetails}</div>
+      </details>
+
+      <div class="desc">${place.description}</div>
+      <div class="desc"><strong>Address:</strong> ${place.address}</div>
+
+      ${place.hours ? `<div class="desc"><strong>Hours:</strong> ${place.hours}</div>` : ''}
+      ${place.accessibility ? `<div class="desc"><strong>Accessibility:</strong> ${place.accessibility}</div>` : ''}
+      ${place.notes ? `<div class="desc"><strong>Notes:</strong> ${place.notes}</div>` : ''}
+
+      <div class="buttons">
+        ${place.website ? `<a class="btn" href="${place.website}" target="_blank">Website</a>` : ''}
+        <a class="btn secondary" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(place.address)}" target="_blank">Directions</a>
+        ${place.phone ? `<a class="btn secondary" href="tel:${place.phone}">Call</a>` : ''}
+      </div>
+    `;
+
+    cardsContainer.appendChild(card);
+  });
+}
+
+searchInput.addEventListener('input', renderCards);
+categoryFilter.addEventListener('change', renderCards);
+ratingFilter.addEventListener('change', renderCards);
+sortSelect.addEventListener('change', renderCards);
+
+renderCards();
+</script>
+
+</body>
+</html>
